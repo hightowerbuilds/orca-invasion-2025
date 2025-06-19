@@ -1,0 +1,12 @@
+.scoreboard-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Add any additional scoreboard-related styles here */
+.scoreboard-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+} 

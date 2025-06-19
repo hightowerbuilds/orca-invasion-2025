@@ -1,0 +1,10 @@
+/* Tree styles are handled in the canvas drawing code */
+.tree-container {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Add any additional tree-related styles here */
+.tree-shadow {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+} 

@@ -1,0 +1,10 @@
+.orca-guts-container {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Add any additional orca guts-related styles here */
+.orca-guts-splatter {
+  filter: drop-shadow(2px 2px 4px rgba(139, 0, 0, 0.3));
+} 

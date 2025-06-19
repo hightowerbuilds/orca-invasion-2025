@@ -1,0 +1,12 @@
+/* Player styles are primarily handled in the canvas drawing code */
+.player-container {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Add any additional player-related styles here */
+.player-direction-indicator {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.5;
+} 

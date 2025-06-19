@@ -1,0 +1,33 @@
+/* Orca styles are primarily handled in the canvas drawing code */
+.orca-container {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Water effects */
+.orca-splash {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+.orca-ripple {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.2;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: ripple 1s ease-out infinite;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+} 

@@ -1,0 +1,11 @@
+/* Bullet styles are primarily handled in the canvas drawing code */
+.bullet-container {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Add any additional bullet-related styles here */
+.bullet-glow {
+  filter: blur(2px);
+  opacity: 0.7;
+} 

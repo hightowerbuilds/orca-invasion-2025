@@ -1,0 +1,10 @@
+/* Tent styles are handled in the canvas drawing code */
+.tent-container {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Add any additional tent-related styles here */
+.tent-shadow {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+} 
