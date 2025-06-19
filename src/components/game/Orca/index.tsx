@@ -1,49 +1,13 @@
 import type { Orca as OrcaType, Position } from '../../../types/game'
-import { calculateAngle, calculateDirection } from '../../../utils/physics'
 import './styles.css'
 
 interface OrcaProps {
   orca: OrcaType
   width: number
   height: number
-  currentTime: number
 }
 
-export const Orca = ({ orca, width, height, currentTime }: OrcaProps) => {
-  const updatePhase = (): OrcaType => {
-    const newOrca = { ...orca }
-    const timeSinceSpawn = currentTime - orca.spawnTime
-
-    if (orca.phase === 'emerging' && timeSinceSpawn > 1000) {
-      newOrca.phase = 'swimming'
-      // Set new random direction for swimming
-      const angle = Math.random() * Math.PI * 2
-      newOrca.direction = calculateDirection(angle)
-    } else if (orca.phase === 'swimming' && timeSinceSpawn > 8000) {
-      newOrca.phase = 'submerging'
-      // Set direction towards nearest edge
-      const toEdgeX = orca.x < width/2 ? -1 : 1
-      const toEdgeY = orca.y < height/2 ? -1 : 1
-      newOrca.direction = calculateDirection(calculateAngle(toEdgeX, toEdgeY))
-    }
-
-    return newOrca
-  }
-
-  const updatePosition = (): OrcaType | null => {
-    const newOrca = updatePhase()
-    newOrca.x += newOrca.direction.x * newOrca.speed
-    newOrca.y += newOrca.direction.y * newOrca.speed
-
-    // Remove orca if it's gone off screen
-    if (newOrca.x < -100 || newOrca.x > width + 100 || 
-        newOrca.y < -100 || newOrca.y > height + 100) {
-      return null
-    }
-
-    return newOrca
-  }
-
+export const Orca = ({ orca, width, height }: OrcaProps) => {
   const drawOrca = (ctx: CanvasRenderingContext2D) => {
     // Don't draw inactive orcas
     if (!orca.active) return;

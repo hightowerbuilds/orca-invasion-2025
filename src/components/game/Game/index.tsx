@@ -321,7 +321,7 @@ export const Game = () => {
       <GameCanvas
         width={GAME_WIDTH}
         height={GAME_HEIGHT}
-        onCanvasReady={(canvas) => {
+        onCanvasReady={() => {
           // Canvas is ready, but we don't need to do anything here
           // as the game loop handles all drawing
         }}
@@ -331,7 +331,7 @@ export const Game = () => {
         <Bullet key={`bullet-${index}`} bullet={bullet} width={GAME_WIDTH} height={GAME_HEIGHT} />
       ))}
       {orcasRef.current.map((orca, index) => (
-        <Orca key={`orca-${index}`} orca={orca} width={GAME_WIDTH} height={GAME_HEIGHT} currentTime={Date.now()} />
+        <Orca key={`orca-${index}`} orca={orca} width={GAME_WIDTH} height={GAME_HEIGHT} />
       ))}
       {orcaGutsRef.current.map((guts, index) => (
         <OrcaGuts key={`guts-${guts.createdAt}-${index}`} guts={guts} width={GAME_WIDTH} height={GAME_HEIGHT} />

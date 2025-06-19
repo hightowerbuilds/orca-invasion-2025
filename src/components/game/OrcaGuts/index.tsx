@@ -9,7 +9,7 @@ interface OrcaGutsProps {
 
 export const OrcaGuts = ({ guts, width, height }: OrcaGutsProps) => {
   const drawGuts = (ctx: CanvasRenderingContext2D) => {
-    const { x, y, size, rotation, pieces } = guts;
+    const { x, y, rotation, pieces } = guts;
 
     ctx.save();
     ctx.translate(x, y);
@@ -80,11 +80,11 @@ export const OrcaGuts = ({ guts, width, height }: OrcaGutsProps) => {
 
 export const createOrcaGuts = (
   x: number,
-  y: number,
-  size: number
+  y: number
 ): OrcaGutsType => {
   const pieces: OrcaGutsPiece[] = [];
   const numPieces = 15;
+  const size = 40; // Default size
 
   // Create multiple pieces of guts with more variation
   for (let i = 0; i < numPieces; i++) {

@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import type { Position } from '../../../types/game';
 import './styles.css';
 
 interface GameCanvasProps {

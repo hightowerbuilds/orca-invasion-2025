@@ -1,5 +1,4 @@
-import type { Player as PlayerType, Position } from '../../../types/game'
-import { normalizeVector } from '../../../utils/physics'
+import type { Player as PlayerType } from '../../../types/game'
 import './styles.css'
 
 interface PlayerProps {
